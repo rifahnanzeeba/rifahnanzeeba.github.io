@@ -68,6 +68,34 @@
       padding: 20px;
       color: #555;
     }
+    .skills-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .skill-category {
+      background: #f9fafb;
+      padding: 18px;
+      border-left: 4px solid #1f2937;
+      border-radius: 8px;
+    }
+
+    .skill-category h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+.skill-category p {
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+}
     .about-container {
       display: flex;
       align-items: center;
@@ -122,13 +150,53 @@
 
  
 
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <p>
-      Python, C/C++, MATLAB, AutoCAD, ORCAD PSpice, PVsyst, CYME PSAF, Arduino, ESP32,
-      Keil µVision, Quartus, Linux, Pandas, NumPy, Matplotlib, Scikit-learn, TensorFlow.
-    </p>
-  </section>
+<section id="skills">
+  <h2>Technical Skills</h2>
+
+  <div class="skills-container">
+
+    <div class="skill-category">
+      <h3>Programming Languages</h3>
+      <p>Python, C/C++</p>
+    </div>
+
+    <div class="skill-category">
+      <h3>Simulation & Design Tools</h3>
+      <p>MATLAB, AutoCAD, ORCAD PSpice, PVsyst, CYME PSAF, SketchUp</p>
+    </div>
+
+    <div class="skill-category">
+      <h3>Embedded Systems & FPGA</h3>
+      <p>Arduino, ESP32, Keil µVision, Quartus</p>
+    </div>
+
+    <div class="skill-category">
+      <h3>Data Science & Machine Learning Libraries</h3>
+      <p>Pandas, NumPy, Matplotlib, Scikit-learn, TensorFlow</p>
+    </div>
+
+    <div class="skill-category">
+      <h3>Database & Cloud Platforms</h3>
+      <p>MySQL, Arduino IoT Cloud</p>
+    </div>
+
+    <div class="skill-category">
+      <h3>Productivity & Reporting Tools</h3>
+      <p>Microsoft Office, Power BI, Generative AI Tools</p>
+    </div>
+
+    <div class="skill-category">
+      <h3>Systems & Development Tools</h3>
+      <p>Linux Ubuntu, LXD Containers</p>
+    </div>
+
+    <div class="skill-category">
+      <h3>Technical Domains</h3>
+      <p>Internet of Things, Machine Learning, Computer Vision, Embedded Systems, Renewable Energy and Power Systems</p>
+    </div>
+
+  </div>
+</section>
 
 <section id="contact">
   <h2>Contact</h2>
