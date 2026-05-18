@@ -14,17 +14,27 @@
       background: #f7f7f7;
     }
 
-    header {
-      background: #1f2937;
-      color: white;
-      padding: 50px 20px;
-      text-align: center;
-    }
+  .top-nav {
+  background: #1f2937;
+  padding: 18px 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-    }
+.top-nav a {
+  margin: 0 18px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.top-nav a:hover {
+  color: #93c5fd;
+}
 
     header p {
       font-size: 18px;
@@ -273,21 +283,19 @@
 </head>
 <body id="top">
 
-  <header>
-    <h1>Rifah Nanzeeba</h1>
-    
-  </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#research-interests">Research</a>
-    <a href="#publication">Publications</a>
-    <a href="project.html">Projects</a>
-    <a href="#skills">Skills</a>
+
+
+
+  <nav class="top-nav">
+    <a href="index.html">Home</a>
+    <a href="education.html">Education</a>
+    <a href="#publications">Publications</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#research">Research</a>
     <a href="#cv">CV</a>
     <a href="#contact">Contact</a>
-    
   </nav>
 
   <section id="about">
