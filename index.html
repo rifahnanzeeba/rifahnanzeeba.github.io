@@ -4,506 +4,245 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rifah Nanzeeba</title>
+
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      line-height: 1.6 ;
-      color: #222;
-      background: #f7f7f7;
-    }
 
-  .top-nav {
-  background: #1f2937;
-  padding: 18px 20px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.top-nav a {
-  margin: 0 18px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.top-nav a:hover {
-  color: #93c5fd;
-}
-
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
-
-
-    .publication {
-      margin-bottom: 25px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .publication:last-child {
-      border-bottom: none;
-    }
-
-  
-    .publication h3 a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-
-    .publication h3 a:hover {
-      color: #1d4ed8;
-      text-decoration: underline;
-    }
-
-    .publication p {
-      margin: 6px 0;
-    }
-
-    .status {
-      color: #2563eb;
-      font-weight: bold;
-    }
-    .research-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    .research-item {
-      background: #f9fafb;
-      padding: 15px;
-      border-left: 4px solid #1f2937;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    
-    .cv-button {
-      display: inline-block;
-      margin: 12px 0 20px 0;
-      padding: 10px 18px;
-      background: #1f2937;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-
-    .cv-button:hover {
-      background: #2563eb;
-    }
-
-   
-
-    @media (max-width: 700px) {
-      .research-container {
-        grid-template-columns: 1fr;
-      }
-
-      .cv-viewer {
-        height: 500px;
-      }
-    }
-    nav {
-      background: white;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    nav a {
-      margin: 0 12px;
-      text-decoration: none;
-      color: #1f2937;
-      font-weight: bold;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 25px auto;
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-    }
-
-    h2 {
-      color: #1f2937;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 8px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-    .back-to-top {
-      display: inline-block;
-      margin-bottom: 10px;
-      padding: 8px 14px;
-      background: #1f2937;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-
-    .back-to-top:hover {
-      background: #2563eb;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #555;
-    }
-    .skills-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .skill-category {
-      background: #f9fafb;
-      padding: 18px;
-      border-left: 4px solid #1f2937;
-      border-radius: 8px;
-    }
-
-    .skill-category h3 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      color: #111827;
-    }
-
-.skill-category p {
-  margin: 0;
-}
-
-@media (max-width: 700px) {
-  .skills-container {
-    grid-template-columns: 1fr;
-  }
-}
-    
-
-   
-
-    .about-layout {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 50px;
-  align-items: start;
-}
-
-.about-left {
-  text-align: center;
-}
-
-.profile-photo {
-  width: 190px;
-  height: 230px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 2px solid #1f2937;
-}
-
-.about-left h2 {
-  margin-top: 18px;
-  margin-bottom: 8px;
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.about-left p {
-  margin: 6px 0;
-  color: #333;
-}
-
-.about-right h2 {
-  margin-top: 0;
-}
-
-.about-right p {
-  text-align: justify;
-  margin-bottom: 15px;
-}
-
-.social-icons {
-  margin-top: 18px;
-  display: flex;
-  justify-content: center;
-  gap: 22px;
-  align-items: center;
-}
-
-.social-icons a {
-  color: #1f2937;
-  font-size: 22px;
-  text-decoration: none;
-  transition: 0.2s ease;
-}
-
-.social-icons a:hover {
-  color: #2f6f9f;
-  transform: translateY(-2px);
-}
-
-@media (max-width: 800px) {
-  .about-layout {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .about-right p {
-    text-align: left;
-  }
-}
-    }
-  </style>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body id="top">
 
-
-
-
-
+  <!-- Navigation -->
   <nav class="top-nav">
     <a href="index.html">Home</a>
     <a href="education.html">Education</a>
     <a href="#publications">Publications</a>
     <a href="project.html">Projects</a>
     <a href="#experience">Experience</a>
-    <a href="#research">Research</a>
+    <a href="#research-interests">Research</a>
     <a href="#cv">CV</a>
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- About Section -->
   <section id="about">
-  <div class="about-layout">
+    <div class="about-layout">
 
-    <div class="about-left">
-      <img src="WM.jpeg" alt="Rifah Nanzeeba" class="profile-photo">
+      <div class="about-left">
+        <img src="WM.jpeg" alt="Rifah Nanzeeba" class="profile-photo">
 
-      <h2>Rifah Nanzeeba</h2>
-      <p>Prospective Graduate Student</p>
-      <p>Spring 2027</p>
-      
+        <h2>Rifah Nanzeeba</h2>
+        <p>Prospective Graduate Student</p>
+        <p>Spring 2027</p>
 
-         <div class="social-icons">
-  <a href="https://scholar.google.com/citations?user=uKx2YNoAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar">
-    <i class="fa-brands fa-google-scholar"></i>
-  </a>
+        <div class="social-icons">
+          <a href="https://scholar.google.com/citations?user=uKx2YNoAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar">
+            <i class="fa-brands fa-google-scholar"></i>
+          </a>
 
-  <a href="https://github.com/rifahnanzeeba" target="_blank" title="GitHub">
-    <i class="fa-brands fa-github"></i>
-  </a>
+          <a href="https://github.com/rifahnanzeeba" target="_blank" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
 
-  <a href="https://www.linkedin.com/in/rifah-nanzeeba-9958081a5/" target="_blank" title="LinkedIn">
-    <i class="fa-brands fa-linkedin"></i>
-  </a>
-</div>
+          <a href="https://www.linkedin.com/in/rifah-nanzeeba-9958081a5/" target="_blank" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <h2>About Me</h2>
+
+        <p>
+          I am an Electrical and Electronic Engineering graduate from Bangladesh University of Engineering and Technology (BUET),
+          with interests in machine learning, Internet of Things, embedded systems, computer vision, signal processing,
+          renewable energy, and power systems.
+        </p>
+
+        <p>
+          My academic and project experience includes IoT-based monitoring systems, autonomous medicine dispensing robotics,
+          real-time drowsiness detection using deep learning, intelligent lighting control, and hardware-assisted malware
+          detection using machine learning. I aim to pursue graduate research that applies intelligent sensing, embedded systems,
+          and data-driven methods to real-world engineering problems in automation, smart energy, healthcare technology, and robotics.
+        </p>
+      </div>
+
     </div>
+  </section>
 
-    <div class="about-right">
-      <h2>About Me</h2>
-
-      <p>
-        I am an Electrical and Electronic Engineering graduate from Bangladesh University of Engineering and Technology (BUET),
-        with interests in machine learning, Internet of Things, embedded systems, computer vision, signal processing,
-        renewable energy, and power systems.
-      </p>
-
-      <p>
-        My academic and project experience includes IoT-based monitoring systems, autonomous medicine dispensing robotics,
-        real-time drowsiness detection using deep learning, intelligent lighting control, and hardware-assisted malware
-        detection using machine learning. I aim to pursue graduate research that applies intelligent sensing, embedded systems,
-        and data-driven methods to real-world engineering problems in automation, smart energy, healthcare technology, and robotics.
-      </p>
-    </div>
-
-  </div>
-</section>
-
- 
-
-
+  <!-- Research Interests Section -->
   <section id="research-interests">
-  <h2>Research Interests</h2>
+    <h2>Research Interests</h2>
 
-  <div class="research-container">
-    <div class="research-item">
-      <h3>Machine Learning and Data Analytics</h3>
-      <p>Application of ML techniques for classification, prediction, signal analysis, and real-world engineering problems.</p>
-    </div>
+    <div class="research-container">
+      <div class="research-item">
+        <h3>Machine Learning and Data Analytics</h3>
+        <p>Application of ML techniques for classification, prediction, signal analysis, and real-world engineering problems.</p>
+      </div>
 
-    <div class="research-item">
-      <h3>Internet of Things and Embedded Systems</h3>
-      <p>IoT-based monitoring, sensing, automation, and microcontroller-based system development.</p>
-    </div>
+      <div class="research-item">
+        <h3>Internet of Things and Embedded Systems</h3>
+        <p>IoT-based monitoring, sensing, automation, and microcontroller-based system development.</p>
+      </div>
 
-    <div class="research-item">
-      <h3>Computer Vision and Intelligent Systems</h3>
-      <p>Image-based detection, real-time monitoring, and AI-assisted decision-making systems.</p>
-    </div>
+      <div class="research-item">
+        <h3>Computer Vision and Intelligent Systems</h3>
+        <p>Image-based detection, real-time monitoring, and AI-assisted decision-making systems.</p>
+      </div>
 
-    <div class="research-item">
-      <h3>Signal Processing and Communication Systems</h3>
-      <p>Signal analysis, feature extraction, wireless communication, and sensor-based data interpretation.</p>
-    </div>
+      <div class="research-item">
+        <h3>Signal Processing and Communication Systems</h3>
+        <p>Signal analysis, feature extraction, wireless communication, and sensor-based data interpretation.</p>
+      </div>
 
-    <div class="research-item">
-      <h3>Renewable Energy and Power Systems</h3>
-      <p>Solar PV systems, smart energy monitoring, power system analysis, and sustainable energy applications.</p>
-    </div>
+      <div class="research-item">
+        <h3>Renewable Energy and Power Systems</h3>
+        <p>Solar PV systems, smart energy monitoring, power system analysis, and sustainable energy applications.</p>
+      </div>
 
-    <div class="research-item">
-      <h3>Robotics and Autonomous Systems</h3>
-      <p>ROS 2-based robotics learning, simulation, obstacle avoidance, and intelligent robotic system development.</p>
+      <div class="research-item">
+        <h3>Robotics and Autonomous Systems</h3>
+        <p>ROS 2-based robotics learning, simulation, obstacle avoidance, and intelligent robotic system development.</p>
+      </div>
     </div>
-  </div>
-</section>
-  <section>
+  </section>
+
+  <!-- Publications Section -->
+  <section id="publications">
     <h2>Research Publications</h2>
 
     <div class="publication">
-      <h3>  <a href="https://ieeexplore.ieee.org/abstract/document/11491146" target="_blank">
-        ML Based Malware Detection Using Hardware Assisted Performance Counters
-      </a></h3>
-      <p> 28th International Conference on Computer and Information Technology(ICCIT), 2025</p>
-      
+      <h3>
+        <a href="https://ieeexplore.ieee.org/abstract/document/11491146" target="_blank">
+          ML Based Malware Detection Using Hardware Assisted Performance Counters
+        </a>
+      </h3>
+      <p>28th International Conference on Computer and Information Technology (ICCIT), 2025</p>
       <p><strong>R. Nanzeeba</strong>, M. I. Chowdhury and P. K. Saha</p>
-    
     </div>
 
     <div class="publication">
-      <h3><a href="https://ieeexplore.ieee.org/abstract/document/11171744" target="_blank">
-        DisBot: An Automated Medicine Dispensing Robot for Efficient Delivery
-      </a></h3>
-      <p> International Conference on Quantum Photonics, Artificial Intelligence, and Networking(QPAIN), 2025</p>
-      
-      <p> S. Hasan, K. M. Tazwar, N. Islam, <strong>R. Nanzeeba</strong> and M. H. Newaz</p>
-    
-    
+      <h3>
+        <a href="https://ieeexplore.ieee.org/abstract/document/11171744" target="_blank">
+          DisBot: An Automated Medicine Dispensing Robot for Efficient Delivery
+        </a>
+      </h3>
+      <p>International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN), 2025</p>
+      <p>S. Hasan, K. M. Tazwar, N. Islam, <strong>R. Nanzeeba</strong> and M. H. Newaz</p>
     </div>
 
     <div class="publication">
-      <h3><a href="https://ieeexplore.ieee.org/abstract/document/11171781" target="_blank">
-        IR-Remote Driven and Automated Light Intensity Control System Responsive to Occupancy Level
-      </a></h3>
-      <p> International Conference on Quantum Photonics, Artificial Intelligence, and Networking(QPAIN), 2025</p>
-     
-      <p>
-         T. Al Mahmud, A. R. Jowel, F. Z. Chowdhury, M. Hasan, <strong>R. Nanzeeba</strong> and I. A. Fahim
-      </p>
-     
-    
+      <h3>
+        <a href="https://ieeexplore.ieee.org/abstract/document/11171781" target="_blank">
+          IR-Remote Driven and Automated Light Intensity Control System Responsive to Occupancy Level
+        </a>
+      </h3>
+      <p>International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN), 2025</p>
+      <p>T. Al Mahmud, A. R. Jowel, F. Z. Chowdhury, M. Hasan, <strong>R. Nanzeeba</strong> and I. A. Fahim</p>
     </div>
 
     <div class="publication">
-      <h3><a href="https://ieeexplore.ieee.org/abstract/document/11172132" target="_blank">
-        Pipeline for Real-Time Drowsiness Detection Using Pre-Trained CNN Model
-      </a></h3>
-      <p> International Conference on Quantum Photonics, Artificial Intelligence, and Networking(QPAIN), 2025</p>
-      <p> S. Hasan, K. M. Tazwar, P. Paul and <strong>R. Nanzeeba</strong></p>
- 
+      <h3>
+        <a href="https://ieeexplore.ieee.org/abstract/document/11172132" target="_blank">
+          Pipeline for Real-Time Drowsiness Detection Using Pre-Trained CNN Model
+        </a>
+      </h3>
+      <p>International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN), 2025</p>
+      <p>S. Hasan, K. M. Tazwar, P. Paul and <strong>R. Nanzeeba</strong></p>
     </div>
+  </section>
 
-  </section>  
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
 
- 
+    <div class="skills-container">
 
-<section id="skills">
-  <h2>Technical Skills</h2>
+      <div class="skill-category">
+        <h3>Programming Languages</h3>
+        <p>Python, C/C++</p>
+      </div>
 
-  <div class="skills-container">
+      <div class="skill-category">
+        <h3>Simulation & Design Tools</h3>
+        <p>MATLAB, AutoCAD, ORCAD PSpice, PVsyst, CYME PSAF, SketchUp</p>
+      </div>
 
-    <div class="skill-category">
-      <h3>Programming Languages</h3>
-      <p>Python, C/C++</p>
+      <div class="skill-category">
+        <h3>Embedded Systems & FPGA</h3>
+        <p>Arduino, ESP32, Keil µVision, Quartus</p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Data Science & Machine Learning Libraries</h3>
+        <p>Pandas, NumPy, Matplotlib, Scikit-learn, TensorFlow</p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Database & Cloud Platforms</h3>
+        <p>MySQL, Arduino IoT Cloud</p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Productivity & Reporting Tools</h3>
+        <p>Microsoft Office, Power BI, Generative AI Tools</p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Systems & Development Tools</h3>
+        <p>Linux Ubuntu, LXD Containers</p>
+      </div>
+
+      <div class="skill-category">
+        <h3>Technical Domains</h3>
+        <p>Internet of Things, Machine Learning, Computer Vision, Embedded Systems, Renewable Energy and Power Systems</p>
+      </div>
+
     </div>
+  </section>
 
-    <div class="skill-category">
-      <h3>Simulation & Design Tools</h3>
-      <p>MATLAB, AutoCAD, ORCAD PSpice, PVsyst, CYME PSAF, SketchUp</p>
-    </div>
+  <!-- CV Section -->
+  <section id="cv">
+    <h2>Curriculum Vitae</h2>
 
-    <div class="skill-category">
-      <h3>Embedded Systems & FPGA</h3>
-      <p>Arduino, ESP32, Keil µVision, Quartus</p>
-    </div>
+    <p>You can download my CV using the button below.</p>
 
-    <div class="skill-category">
-      <h3>Data Science & Machine Learning Libraries</h3>
-      <p>Pandas, NumPy, Matplotlib, Scikit-learn, TensorFlow</p>
-    </div>
-
-    <div class="skill-category">
-      <h3>Database & Cloud Platforms</h3>
-      <p>MySQL, Arduino IoT Cloud</p>
-    </div>
-
-    <div class="skill-category">
-      <h3>Productivity & Reporting Tools</h3>
-      <p>Microsoft Office, Power BI, Generative AI Tools</p>
-    </div>
-
-    <div class="skill-category">
-      <h3>Systems & Development Tools</h3>
-      <p>Linux Ubuntu, LXD Containers</p>
-    </div>
-
-    <div class="skill-category">
-      <h3>Technical Domains</h3>
-      <p>Internet of Things, Machine Learning, Computer Vision, Embedded Systems, Renewable Energy and Power Systems</p>
-    </div>
-
-  </div>
-</section>
-<section id="cv">
-  <h2>Curriculum Vitae</h2>
-
-  <p>
-    You can download my CV using the button below.
-  </p>
-
-  <a href="Rifah_Nanzeeba_CV__Copy__for_github.pdf" download class="cv-button">
-    Download CV
-  </a>
-
-</section>
-<section id="contact">
-  <h2>Contact</h2>
-
-  <p>Email: <a href="mailto:nanzeeba5041277@gmail.com">nanzeeba5041277@gmail.com</a></p>
-
-  <p>LinkedIn: 
-    <a href="https://www.linkedin.com/in/rifah-nanzeeba-9958081a5/" target="_blank">
-      LinkedIn - Rifah Nanzeeba
+    <a href="Rifah_Nanzeeba_CV__Copy__for_github.pdf" download class="cv-button">
+      Download CV
     </a>
-  </p>
+  </section>
 
-  <p>Google Scholar: 
-    <a href="https://scholar.google.com/citations?user=uKx2YNoAAAAJ&hl=en&oi=ao" target="_blank">
-      Google Scholar - Rifah Nanzeeba
-    </a>
-  </p>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
 
-  <p>GitHub: 
-    <a href="https://github.com/rifahnanzeeba" target="_blank">
-      GitHub Profile - Rifah Nanzeeba 
-    </a>
-  </p>
-</section>
+    <p>Email: <a href="mailto:nanzeeba5041277@gmail.com">nanzeeba5041277@gmail.com</a></p>
 
+    <p>LinkedIn:
+      <a href="https://www.linkedin.com/in/rifah-nanzeeba-9958081a5/" target="_blank">
+        LinkedIn - Rifah Nanzeeba
+      </a>
+    </p>
+
+    <p>Google Scholar:
+      <a href="https://scholar.google.com/citations?user=uKx2YNoAAAAJ&hl=en&oi=ao" target="_blank">
+        Google Scholar - Rifah Nanzeeba
+      </a>
+    </p>
+
+    <p>GitHub:
+      <a href="https://github.com/rifahnanzeeba" target="_blank">
+        GitHub Profile - Rifah Nanzeeba
+      </a>
+    </p>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <a href="#top" class="back-to-top">Back to Top ↑</a>
     <p>© 2026 Rifah Nanzeeba</p>
-    
   </footer>
 
 </body>
