@@ -62,11 +62,26 @@ a {
    About Section
 ========================= */
 
+#about {
+  max-width: none;
+  width: 100%;
+  min-height: calc(100vh - 65px);
+  margin: 0;
+  padding: 55px 8%;
+  border-radius: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
 .about-layout {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 50px;
-  align-items: start;
+  grid-template-columns: 300px 1fr;
+  gap: 75px;
+  align-items: center;
 }
 
 .about-left {
@@ -74,34 +89,24 @@ a {
 }
 
 .profile-photo {
-  width: 190px;
-  height: 230px;
+  width: 210px;
+  height: 260px;
   object-fit: cover;
   border-radius: 8px;
   border: 2px solid #1f2937;
 }
 
-.about-left h2 {
-  margin-top: 18px;
-  margin-bottom: 8px;
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.about-left p {
-  margin: 6px 0;
-  color: #333;
-}
-
 .about-right h2 {
   margin-top: 0;
+  font-size: 30px;
 }
 
 .about-right p {
-  text-align: justify;
-  margin-bottom: 15px;
+  font-size: 17px;
+  line-height: 1.85;
+  text-align: left;
+  margin-bottom: 20px;
 }
-
 /* =========================
    Social Icons
 ========================= */
