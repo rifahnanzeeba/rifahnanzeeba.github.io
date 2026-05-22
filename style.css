@@ -280,24 +280,122 @@ footer {
 ========================= */
 
 @media (max-width: 800px) {
+   /* Navigation */
+  .top-nav {
+    padding: 12px 10px;
+  }
+
+  .top-nav a {
+    display: inline-block;
+    margin: 6px 9px;
+    font-size: 14px;
+  }
+
+  /* General Sections */
+  section {
+    width: auto;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  /* About Section */
+  #about {
+    width: 100%;
+    min-height: auto;
+    margin: 0;
+    padding: 35px 20px;
+    border-radius: 0;
+  }
+
   .about-layout {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 30px;
+  }
+
+  .about-left {
+    order: 1;
+  }
+
+  .about-right {
+    order: 2;
+  }
+
+  .profile-photo {
+    width: 170px;
+    height: 215px;
+  }
+
+  .about-left h2 {
+    font-size: 25px;
+  }
+
+  .about-right h2 {
+    font-size: 26px;
+    text-align: center;
   }
 
   .about-right p {
+    font-size: 16px;
+    line-height: 1.7;
     text-align: left;
   }
-}
 
-@media (max-width: 700px) {
+  /* Research and Skills Cards */
   .research-container,
   .skills-container {
     grid-template-columns: 1fr;
   }
 
+  .research-item,
+  .skill-category {
+    padding: 15px;
+  }
+
+  /* Publications */
+  .publication h3 {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .publication p {
+    font-size: 15px;
+  }
+
+  /* CV Button */
+  .cv-button {
+    width: auto;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 480px) {
+
   .top-nav a {
-    display: inline-block;
-    margin: 6px 10px;
+    margin: 5px 7px;
+    font-size: 13px;
+  }
+
+  #about {
+    padding: 28px 15px;
+  }
+
+  .profile-photo {
+    width: 155px;
+    height: 195px;
+  }
+
+  .about-right h2 {
+    font-size: 23px;
+  }
+
+  section {
+    margin: 10px;
+    padding: 16px;
   }
 }
