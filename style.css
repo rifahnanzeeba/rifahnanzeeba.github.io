@@ -1,401 +1,774 @@
-/* =========================
-   General Page Styling
-========================= */
+/* =========================================================
+   Root Variables
+========================================================= */
+
+:root {
+  --navy: #1f2937;
+  --navy-dark: #111827;
+  --blue: #2f6f9f;
+  --blue-hover: #1f4e73;
+  --blue-light: #a9c9e8;
+
+  --text: #242b34;
+  --muted-text: #566171;
+  --border: #e1e5ea;
+
+  --white: #ffffff;
+  --soft-background: #f6f8fa;
+  --card-background: #ffffff;
+
+  --nav-height: 68px;
+  --page-width: 1320px;
+  --sidebar-width: 285px;
+}
+
+
+/* =========================================================
+   Global Styling
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  line-height: 1.6;
-  color: #222;
-  background: #f7f7f7;
-}
-
-section {
-  max-width: 900px;
-  margin: 25px auto;
-  background: white;
-  padding: 25px;
-  border-radius: 10px;
-}
-
-h2 {
-  color: #1f2937;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 8px;
-}
-
-ul {
-  padding-left: 20px;
+  padding-top: var(--nav-height);
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.7;
 }
 
 a {
-  transition: 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
-/* =========================
-   Top Navigation
-========================= */
+p {
+  margin-top: 0;
+}
+
+strong {
+  color: var(--navy-dark);
+}
+
+
+/* =========================================================
+   Top Navigation Bar
+========================================================= */
 
 .top-nav {
-  background: #1f2937;
-  padding: 18px 20px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
+
+  height: var(--nav-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 42px;
+
+  padding: 0 26px;
+  background: var(--navy);
+  box-shadow: 0 2px 9px rgba(17, 24, 39, 0.15);
 }
 
 .top-nav a {
-  margin: 0 18px;
+  color: var(--white);
   text-decoration: none;
-  color: white;
-  font-weight: bold;
   font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .top-nav a:hover {
-  color: #93c5fd;
+  color: var(--blue-light);
 }
 
-/* =========================
-   About Section
-========================= */
 
-#about {
-  max-width: none;
-  width: 100%;
-  min-height: calc(100vh - 65px);
-  margin: 0;
-  padding: 55px 8%;
-  border-radius: 0;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-}
+/* =========================================================
+   Main Page Layout
+========================================================= */
 
-.about-layout {
-  width: 100%;
-  max-width: 1250px;
+.page-layout {
+  max-width: var(--page-width);
   margin: 0 auto;
+  padding: 0 34px;
+
   display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 75px;
-  align-items: center;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  column-gap: 70px;
 }
 
-.about-left {
+
+/* =========================================================
+   Left Profile Sidebar
+========================================================= */
+
+.profile-sidebar {
+  position: sticky;
+  top: calc(var(--nav-height) + 52px);
+  align-self: start;
   text-align: center;
+  padding-top: 58px;
 }
 
 .profile-photo {
-  width: 210px;
-  height: 260px;
+  display: block;
+  width: 205px;
+  height: 255px;
+  margin: 0 auto 22px;
+
   object-fit: cover;
-  border-radius: 8px;
-  border: 2px solid #1f2937;
+  object-position: center;
+  border: 1px solid var(--border);
+  border-radius: 4px;
 }
 
-.about-right h2 {
-  margin-top: 0;
-  font-size: 30px;
+.profile-sidebar h1 {
+  margin: 0 0 12px;
+  color: var(--navy-dark);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
-.about-right p {
-  font-size: 17px;
-  line-height: 1.85;
-  text-align: left;
-  margin-bottom: 20px;
+.profile-title {
+  margin: 0 0 8px;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.55;
 }
-/* =========================
-   Social Icons
-========================= */
+
+.profile-institution {
+  margin: 0 0 8px;
+  color: var(--muted-text);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.profile-status {
+  margin: 0;
+  color: var(--muted-text);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   Social and Contact Icons
+========================================================= */
 
 .social-icons {
-  margin-top: 18px;
   display: flex;
-  justify-content: center;
-  gap: 22px;
   align-items: center;
+  justify-content: center;
+  gap: 23px;
+  margin-top: 27px;
 }
 
 .social-icons a {
-  color: #1f2937;
-  font-size: 22px;
+  color: var(--navy);
+  font-size: 21px;
   text-decoration: none;
 }
 
 .social-icons a:hover {
-  color: #2f6f9f;
+  color: var(--blue);
   transform: translateY(-2px);
 }
 
-/* =========================
-   Research Interests Section
-========================= */
+.profile-contact {
+  margin-top: 22px;
+  font-size: 14px;
+}
 
-.research-container {
+.profile-contact a {
+  color: var(--blue);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.profile-contact a:hover {
+  color: var(--blue-hover);
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   Right Main Content
+========================================================= */
+
+.main-content {
+  min-width: 0;
+}
+
+.content-section {
+  width: 100%;
+  min-height: calc(100vh - var(--nav-height));
+  padding: 68px 54px;
+  display: flex;
+  align-items: center;
+
+  scroll-margin-top: var(--nav-height);
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+}
+
+.alternate-section {
+  background: var(--soft-background);
+}
+
+.section-content {
+  width: 100%;
+}
+
+.content-section h2 {
+  margin: 0 0 30px;
+  padding-bottom: 12px;
+
+  border-bottom: 2px solid var(--border);
+  color: var(--navy);
+  font-size: 29px;
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   About Me Section
+========================================================= */
+
+#about p {
+  max-width: 780px;
+  margin-bottom: 22px;
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+#about p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   Research Interests Section
+========================================================= */
+
+.research-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .research-item {
-  background: #f9fafb;
-  padding: 15px;
-  border-left: 4px solid #1f2937;
-  border-radius: 8px;
-  font-weight: bold;
+  min-height: 142px;
+  padding: 20px 20px 18px;
+
+  background: var(--card-background);
+  border-left: 4px solid var(--navy);
+  border-radius: 4px;
 }
 
 .research-item h3 {
-  margin-top: 0;
-  color: #111827;
+  margin: 0 0 10px;
+  color: var(--navy-dark);
+  font-size: 18px;
+  line-height: 1.42;
 }
 
 .research-item p {
-  margin-bottom: 0;
-  font-weight: normal;
+  margin: 0;
+  color: var(--muted-text);
+  font-size: 15px;
+  line-height: 1.62;
 }
 
-/* =========================
+
+/* =========================================================
    Publications Section
-========================= */
+========================================================= */
 
 .publication {
-  margin-bottom: 25px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid #ddd;
+  margin-bottom: 27px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid var(--border);
 }
 
 .publication:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
   border-bottom: none;
 }
 
 .publication h3 {
-  margin-bottom: 8px;
+  margin: 0 0 9px;
+  font-size: 19px;
+  line-height: 1.48;
 }
 
 .publication h3 a {
-  color: #2f6f9f;
+  color: var(--blue);
   text-decoration: none;
 }
 
 .publication h3 a:hover {
-  color: #1f4e73;
+  color: var(--blue-hover);
   text-decoration: underline;
 }
 
-.publication p {
-  margin: 6px 0;
+.publication-venue {
+  margin: 0 0 7px;
+  color: var(--text);
+  font-size: 15.5px;
+  font-style: italic;
 }
 
-/* =========================
-   Technical Skills Section
-========================= */
+.publication-authors {
+  margin: 0;
+  color: var(--text);
+  font-size: 15.5px;
+}
 
-.skills-container {
+
+/* =========================================================
+   Experience Section
+========================================================= */
+
+.experience-item {
+  width: 100%;
+}
+
+.experience-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 30px;
+  margin-bottom: 18px;
+}
+
+.experience-heading h3 {
+  margin: 0 0 5px;
+  color: var(--navy-dark);
+  font-size: 21px;
+}
+
+.organization {
+  margin: 0;
+  color: var(--blue);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.duration {
+  margin: 3px 0 0;
+  color: var(--muted-text);
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.experience-list {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.experience-list li {
+  margin-bottom: 10px;
+  padding-left: 4px;
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+
+/* =========================================================
+   CV Section
+========================================================= */
+
+.cv-section-content {
+  text-align: center;
+}
+
+#cv p {
+  max-width: 620px;
+  margin: 0 auto 26px;
+  color: var(--muted-text);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.cv-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 11px 23px;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 5px;
+
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cv-button:hover {
+  background: var(--blue);
+}
+
+
+/* =========================================================
+   Back to Top and Footer
+========================================================= */
+
+.back-top-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 54px 22px;
+}
+
+.back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 15px;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 5px;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.back-to-top:hover {
+  background: var(--blue);
+}
+
+footer {
+  padding: 22px 20px 32px;
+  text-align: center;
+  color: var(--muted-text);
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+}
+
+footer p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   Reusable Styles for project.html
+========================================================= */
+
+.project {
+  margin-bottom: 26px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--border);
+}
+
+.project:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.project h3 {
+  margin: 0 0 9px;
+  color: var(--navy-dark);
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+.project p {
+  margin: 0;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+.project-status {
+  margin-bottom: 8px !important;
+  color: var(--blue) !important;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   Reusable Styles for education.html
+========================================================= */
+
+.subpage-layout {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 56px 26px 70px;
+}
+
+.subpage-section {
+  margin-bottom: 50px;
+}
+
+.subpage-section h2 {
+  margin: 0 0 25px;
+  padding-bottom: 11px;
+
+  border-bottom: 2px solid var(--border);
+  color: var(--navy);
+  font-size: 28px;
+}
+
+.education-card,
+.skills-card,
+.honors-card,
+.coursework-card {
+  padding: 23px 24px;
+  background: var(--soft-background);
+  border-left: 4px solid var(--navy);
+  border-radius: 4px;
+}
+
+.education-card h3 {
+  margin: 0 0 14px;
+  color: var(--navy-dark);
+  font-size: 21px;
+}
+
+.education-card p {
+  margin: 7px 0;
+}
+
+.skills-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
 }
 
 .skill-category {
-  background: #f9fafb;
-  padding: 18px;
-  border-left: 4px solid #1f2937;
-  border-radius: 8px;
+  padding: 19px 20px;
+  background: var(--soft-background);
+  border-left: 4px solid var(--navy);
+  border-radius: 4px;
 }
 
 .skill-category h3 {
-  margin-top: 0;
-  margin-bottom: 8px;
-  color: #111827;
+  margin: 0 0 9px;
+  color: var(--navy-dark);
+  font-size: 18px;
 }
 
 .skill-category p {
   margin: 0;
+  color: var(--text);
+  font-size: 15px;
 }
 
-/* =========================
-   CV Section
-========================= */
-
-.cv-button {
-  display: inline-block;
-  margin: 12px 0 20px 0;
-  padding: 10px 18px;
-  background: #1f2937;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
+.honors-card ul,
+.coursework-card ul {
+  margin: 0;
+  padding-left: 22px;
 }
 
-.cv-button:hover {
-  background: #2563eb;
+.honors-card li,
+.coursework-card li {
+  margin-bottom: 8px;
 }
 
-/* =========================
-   Contact Section
-========================= */
 
-#contact a {
-  color: #2f6f9f;
-  text-decoration: none;
-}
+/* =========================================================
+   Tablet Responsive Design
+========================================================= */
 
-#contact a:hover {
-  color: #1f4e73;
-  text-decoration: underline;
-}
+@media (max-width: 1000px) {
 
-/* =========================
-   Footer
-========================= */
-
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #555;
-}
-
-.back-to-top {
-  display: inline-block;
-  margin-bottom: 10px;
-  padding: 8px 14px;
-  background: #1f2937;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-}
-
-.back-to-top:hover {
-  background: #2563eb;
-}
-
-/* =========================
-   Responsive Design
-========================= */
-
-@media (max-width: 800px) {
-   /* Navigation */
   .top-nav {
-    padding: 12px 10px;
+    gap: 24px;
+  }
+
+  .page-layout {
+    grid-template-columns: 235px minmax(0, 1fr);
+    column-gap: 35px;
+    padding: 0 20px;
+  }
+
+  .profile-photo {
+    width: 182px;
+    height: 228px;
+  }
+
+  .profile-sidebar h1 {
+    font-size: 25px;
+  }
+
+  .content-section {
+    padding: 54px 32px;
+  }
+
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   Mobile Responsive Design
+========================================================= */
+
+@media (max-width: 760px) {
+
+  :root {
+    --nav-height: auto;
+  }
+
+  body {
+    padding-top: 0;
+  }
+
+  .top-nav {
+    position: static;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 10px 21px;
+    padding: 15px 14px;
   }
 
   .top-nav a {
-    display: inline-block;
-    margin: 6px 9px;
     font-size: 14px;
   }
 
-  /* General Sections */
-  section {
-    width: auto;
-    margin: 15px;
-    padding: 20px;
-    border-radius: 8px;
+  .page-layout {
+    display: block;
+    padding: 0;
   }
 
-  h2 {
-    font-size: 24px;
-  }
-
-  /* About Section */
-  #about {
-    width: 100%;
-    min-height: auto;
-    margin: 0;
-    padding: 35px 20px;
-    border-radius: 0;
-  }
-
-  .about-layout {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .about-left {
-    order: 1;
-  }
-
-  .about-right {
-    order: 2;
+  .profile-sidebar {
+    position: static;
+    padding: 42px 20px 48px;
+    border-bottom: 1px solid var(--border);
   }
 
   .profile-photo {
     width: 170px;
-    height: 215px;
+    height: 214px;
   }
 
-  .about-left h2 {
+  .profile-sidebar h1 {
     font-size: 25px;
   }
 
-  .about-right h2 {
-    font-size: 26px;
-    text-align: center;
+  .main-content {
+    width: 100%;
   }
 
-  .about-right p {
+  .content-section {
+    min-height: auto;
+    padding: 48px 21px;
+    scroll-margin-top: 0;
+  }
+
+  .content-section h2 {
+    margin-bottom: 23px;
+    font-size: 25px;
+  }
+
+  #about p {
     font-size: 16px;
-    line-height: 1.7;
-    text-align: left;
+    line-height: 1.78;
   }
 
-  /* Research and Skills Cards */
-  .research-container,
-  .skills-container {
+  .research-grid,
+  .skills-grid {
     grid-template-columns: 1fr;
   }
 
-  .research-item,
-  .skill-category {
-    padding: 15px;
-  }
-
-  /* Publications */
   .publication h3 {
     font-size: 17px;
-    line-height: 1.5;
   }
 
-  .publication p {
+  .publication-venue,
+  .publication-authors {
     font-size: 15px;
   }
 
-  /* CV Button */
-  .cv-button {
-    width: auto;
-    text-align: center;
+  .experience-heading {
+    display: block;
+  }
+
+  .duration {
+    margin-top: 8px;
+  }
+
+  .experience-list li {
+    font-size: 15.5px;
+  }
+
+  .back-top-container {
+    padding: 22px 21px 34px;
+    justify-content: center;
+  }
+
+  .subpage-layout {
+    padding: 42px 20px 55px;
   }
 }
 
 
+/* =========================================================
+   Small Mobile Screens
+========================================================= */
+
 @media (max-width: 480px) {
 
+  .top-nav {
+    gap: 8px 16px;
+    padding: 13px 10px;
+  }
+
   .top-nav a {
-    margin: 5px 7px;
     font-size: 13px;
   }
 
-  #about {
-    padding: 28px 15px;
+  .profile-sidebar {
+    padding: 35px 16px 40px;
   }
 
   .profile-photo {
     width: 155px;
-    height: 195px;
+    height: 196px;
   }
 
-  .about-right h2 {
+  .profile-sidebar h1 {
     font-size: 23px;
   }
 
-  section {
-    margin: 10px;
-    padding: 16px;
+  .social-icons {
+    gap: 20px;
+  }
+
+  .content-section {
+    padding: 39px 16px;
+  }
+
+  .content-section h2 {
+    font-size: 23px;
+  }
+
+  .research-item {
+    padding: 17px;
+  }
+
+  #cv p {
+    font-size: 15.5px;
+  }
+
+  .cv-button {
+    font-size: 15px;
+    padding: 10px 19px;
   }
 }
