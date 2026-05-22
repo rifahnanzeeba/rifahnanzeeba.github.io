@@ -1,1 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Publications | Rifah Nanzeeba</title>
+
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
+
+  <style>
+    /* =========================================================
+       Root Variables
+    ========================================================= */
+
+    :root {
+      --navy: #1f2937;
+      --navy-dark: #111827;
+      --blue: #2f6f9f;
+      --blue-hover: #1f4e73;
+      --blue-light: #a9c9e8;
+
+      --text: #242b34;
+      --muted-text: #566171;
+      --border: #e2e7ed;
+      --white: #ffffff;
+      --soft-background: #f7f8fa;
+
+      --nav-height: 68px;
+      --content-width: 1020px;
+    }
+
+    /* =========================================================
+       General Styling
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding-top: var(--nav-height);
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      transition: color 0.2s ease, background-color 0.2s ease;
+    }
+
+    strong {
+      color: var(--navy-dark);
+    }
+
+    /* =========================================================
+       Top Navigation Bar
+    ========================================================= */
+
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      z-index: 1000;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 42px;
+
+      padding: 0 24px;
+      background: var(--navy);
+      box-shadow: 0 2px 9px rgba(17, 24, 39, 0.15);
+    }
+
+    .top-nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .top-nav a:hover,
+    .top-nav a.active {
+      color: var(--blue-light);
+    }
+
+    /* =========================================================
+       Publications Page Layout
+    ========================================================= */
+
+    .publications-page {
+      width: 100%;
+      padding: 52px 28px 60px;
+      background: var(--white);
+    }
+
+    .publication-content {
+      width: 100%;
+      max-width: var(--content-width);
+      margin: 0 auto;
+    }
+
+    .page-heading {
+      margin: 0 0 36px;
+      padding-bottom: 12px;
+      color: var(--navy);
+      border-bottom: 2px solid var(--border);
+      font-size: 33px;
+      line-height: 1.3;
+    }
+
+    .page-introduction {
+      max-width: 760px;
+      margin: -18px 0 36px;
+      color: var(--muted-text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       Publication Entries
+    ========================================================= */
+
+    .publication {
+      margin-bottom: 31px;
+      padding-bottom: 27px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .publication:last-of-type {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .publication h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .publication h2 a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .publication h2 a:hover {
+      color: var(--blue-hover);
+      text-decoration: underline;
+    }
+
+    .publication-venue {
+      margin: 0 0 8px;
+      color: var(--text);
+      font-size: 16px;
+      font-style: italic;
+      line-height: 1.65;
+    }
+
+    .publication-authors {
+      margin: 0 0 13px;
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .paper-button {
+      display: inline-block;
+      padding: 4px 12px;
+      border: 1px solid var(--blue);
+      border-radius: 4px;
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .paper-button:hover {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    /* =========================================================
+       Back to Top and Footer
+    ========================================================= */
+
+    .back-top-container {
+      margin-top: 46px;
+      text-align: right;
+    }
+
+    .back-to-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 15px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .back-to-top:hover {
+      background: var(--blue);
+    }
+
+    footer {
+      padding: 24px 20px 32px;
+      text-align: center;
+      color: var(--muted-text);
+      border-top: 1px solid var(--border);
+      background: var(--white);
+      font-size: 14px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* =========================================================
+       Tablet Responsive Design
+    ========================================================= */
+
+    @media (max-width: 900px) {
+      .top-nav {
+        gap: 25px;
+      }
+
+      .publications-page {
+        padding: 46px 24px 55px;
+      }
+
+      .page-heading {
+        font-size: 29px;
+      }
+    }
+
+    /* =========================================================
+       Mobile Responsive Design
+    ========================================================= */
+
+    @media (max-width: 760px) {
+      body {
+        padding-top: 0;
+      }
+
+      .top-nav {
+        position: static;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+        padding: 15px 12px;
+      }
+
+      .top-nav a {
+        font-size: 14px;
+      }
+
+      .publications-page {
+        padding: 40px 20px 48px;
+      }
+
+      .page-heading {
+        margin-bottom: 28px;
+        font-size: 27px;
+      }
+
+      .page-introduction {
+        margin: -12px 0 28px;
+        font-size: 15.5px;
+      }
+
+      .publication {
+        margin-bottom: 25px;
+        padding-bottom: 22px;
+      }
+
+      .publication h2 {
+        font-size: 18px;
+      }
+
+      .publication-venue,
+      .publication-authors {
+        font-size: 15px;
+      }
+
+      .back-top-container {
+        text-align: center;
+      }
+    }
+
+    /* =========================================================
+       Small Mobile Screens
+    ========================================================= */
+
+    @media (max-width: 480px) {
+      .top-nav {
+        gap: 8px 16px;
+        padding: 13px 10px;
+      }
+
+      .top-nav a {
+        font-size: 13px;
+      }
+
+      .publications-page {
+        padding: 34px 16px 43px;
+      }
+
+      .page-heading {
+        font-size: 24px;
+      }
+
+      .publication h2 {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- =========================
+       Navigation Bar
+  ========================== -->
+  <nav class="top-nav">
+    <a href="index.html">Home</a>
+    <a href="education.html">Education</a>
+    <a href="publications.html" class="active">Publications</a>
+    <a href="project.html">Projects</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#research-interests">Research</a>
+    <a href="index.html#cv">CV</a>
+  </nav>
+
+  <!-- =========================
+       Publications Section
+  ========================== -->
+  <main class="publications-page">
+    <div class="publication-content">
+
+      <h1 class="page-heading">Publications</h1>
+
+      <p class="page-introduction">
+        Peer-reviewed conference publications in machine learning, robotics,
+        intelligent control systems, and computer vision applications.
+      </p>
+
+      <article class="publication">
+        <h2>
+          <a
+            href="https://ieeexplore.ieee.org/abstract/document/11491146"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ML Based Malware Detection Using Hardware Assisted Performance Counters
+          </a>
+        </h2>
+
+        <p class="publication-venue">
+          28th International Conference on Computer and Information Technology (ICCIT), 2025
+        </p>
+
+        <p class="publication-authors">
+          <strong>R. Nanzeeba</strong>, M. I. Chowdhury and P. K. Saha
+        </p>
+
+        <a
+          href="https://ieeexplore.ieee.org/abstract/document/11491146"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="paper-button"
+        >
+          DOI
+        </a>
+      </article>
+
+      <article class="publication">
+        <h2>
+          <a
+            href="https://ieeexplore.ieee.org/abstract/document/11171744"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            DisBot: An Automated Medicine Dispensing Robot for Efficient Delivery
+          </a>
+        </h2>
+
+        <p class="publication-venue">
+          International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN), 2025
+        </p>
+
+        <p class="publication-authors">
+          S. Hasan, K. M. Tazwar, N. Islam, <strong>R. Nanzeeba</strong> and M. H. Newaz
+        </p>
+
+        <a
+          href="https://ieeexplore.ieee.org/abstract/document/11171744"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="paper-button"
+        >
+          DOI
+        </a>
+      </article>
+
+      <article class="publication">
+        <h2>
+          <a
+            href="https://ieeexplore.ieee.org/abstract/document/11171781"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            IR-Remote Driven and Automated Light Intensity Control System Responsive to Occupancy Level
+          </a>
+        </h2>
+
+        <p class="publication-venue">
+          International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN), 2025
+        </p>
+
+        <p class="publication-authors">
+          T. Al Mahmud, A. R. Jowel, F. Z. Chowdhury, M. Hasan,
+          <strong>R. Nanzeeba</strong> and I. A. Fahim
+        </p>
+
+        <a
+          href="https://ieeexplore.ieee.org/abstract/document/11171781"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="paper-button"
+        >
+          DOI
+        </a>
+      </article>
+
+      <article class="publication">
+        <h2>
+          <a
+            href="https://ieeexplore.ieee.org/abstract/document/11172132"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pipeline for Real-Time Drowsiness Detection Using Pre-Trained CNN Model
+          </a>
+        </h2>
+
+        <p class="publication-venue">
+          International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN), 2025
+        </p>
+
+        <p class="publication-authors">
+          S. Hasan, K. M. Tazwar, P. Paul and <strong>R. Nanzeeba</strong>
+        </p>
+
+        <a
+          href="https://ieeexplore.ieee.org/abstract/document/11172132"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="paper-button"
+        >
+          DOI
+        </a>
+      </article>
+
+      <div class="back-top-container">
+        <a href="#top" class="back-to-top">
+          Back to Top <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================
+       Footer
+  ========================== -->
+  <footer>
+    <p>© 2026 Rifah Nanzeeba</p>
+  </footer>
+
+</body>
+</html>
