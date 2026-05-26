@@ -1,5 +1,6 @@
 /* =========================================================
-   Root Variables
+   Shared Theme and Layout Styles
+   Used by: index.html, education.html, publications.html, project.html
 ========================================================= */
 
 :root {
@@ -13,15 +14,35 @@
   --muted-text: #566171;
   --border: #e1e5ea;
 
-  --white: #ffffff;
-  --soft-background: #f6f8fa;
-  --card-background: #ffffff;
+  --page-background: #ffffff;
+  --surface: #ffffff;
+  --surface-alt: #f6f8fa;
+  --card-background: #f6f8fa;
+  --on-navy: #ffffff;
 
   --nav-height: 68px;
   --page-width: 1320px;
+  --content-width: 1050px;
   --sidebar-width: 285px;
 }
 
+html[data-theme="dark"] {
+  --navy: #101827;
+  --navy-dark: #f4f7fb;
+  --blue: #85c6ef;
+  --blue-hover: #b5ddf7;
+  --blue-light: #bfdbfe;
+
+  --text: #e4e9f0;
+  --muted-text: #b6c2d0;
+  --border: #334155;
+
+  --page-background: #111824;
+  --surface: #111824;
+  --surface-alt: #162131;
+  --card-background: #182536;
+  --on-navy: #ffffff;
+}
 
 /* =========================================================
    Global Styling
@@ -40,8 +61,9 @@ body {
   padding-top: var(--nav-height);
   font-family: Arial, Helvetica, sans-serif;
   color: var(--text);
-  background: var(--white);
+  background: var(--page-background);
   line-height: 1.65;
+  transition: background-color 0.22s ease, color 0.22s ease;
 }
 
 a {
@@ -60,7 +82,6 @@ ul {
   padding-left: 22px;
 }
 
-
 /* =========================================================
    Top Navigation Bar
 ========================================================= */
@@ -72,19 +93,19 @@ ul {
   right: 0;
   z-index: 1000;
 
-  height: var(--nav-height);
+  min-height: var(--nav-height);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 38px;
+  gap: 34px;
 
   padding: 0 24px;
   background: var(--navy);
-  box-shadow: 0 2px 9px rgba(17, 24, 39, 0.15);
+  box-shadow: 0 2px 9px rgba(17, 24, 39, 0.16);
 }
 
 .top-nav a {
-  color: var(--white);
+  color: var(--on-navy);
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
@@ -96,26 +117,39 @@ ul {
   color: var(--blue-light);
 }
 
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+  margin-left: 7px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--on-navy);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--on-navy);
+}
 
 /* =========================================================
-   Main Page Layout
+   Home Page: Main Two-Column Layout
 ========================================================= */
 
 .page-layout {
   max-width: var(--page-width);
   margin: 0 auto;
   padding: 0 34px;
-
   display: grid;
   grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
   column-gap: 62px;
   align-items: start;
 }
-
-
-/* =========================================================
-   Left Profile Sidebar
-========================================================= */
 
 .profile-sidebar {
   position: sticky;
@@ -130,7 +164,6 @@ ul {
   width: 205px;
   height: 255px;
   margin: 0 auto 15px;
-
   object-fit: cover;
   object-position: center;
   border: 1px solid var(--border);
@@ -152,24 +185,13 @@ ul {
   line-height: 1.5;
 }
 
-.profile-institution {
+.profile-institution,
+.profile-status {
   margin: 0 0 5px;
   color: var(--muted-text);
   font-size: 14px;
   line-height: 1.5;
 }
-
-.profile-status {
-  margin: 0;
-  color: var(--muted-text);
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-
-/* =========================================================
-   Social and Contact Icons
-========================================================= */
 
 .social-icons {
   display: flex;
@@ -180,7 +202,7 @@ ul {
 }
 
 .social-icons a {
-  color: var(--navy);
+  color: var(--navy-dark);
   font-size: 21px;
   text-decoration: none;
 }
@@ -206,44 +228,68 @@ ul {
   text-decoration: underline;
 }
 
-
-/* =========================================================
-   Right Main Content - Continuous Compact Layout
-========================================================= */
-
 .main-content {
   min-width: 0;
   padding-top: 28px;
 }
 
-.content-section {
+/* =========================================================
+   Shared Compact Section Spacing
+   Applies consistently across all pages
+========================================================= */
+
+.content-section,
+.subpage-section {
   width: 100%;
   padding: 28px 38px;
   margin: 0;
-
   scroll-margin-top: calc(var(--nav-height) + 8px);
   border-bottom: 1px solid var(--border);
-  background: var(--white);
+  background: var(--surface);
+}
+
+.content-section:last-of-type,
+.subpage-section:last-of-type {
+  border-bottom: none;
 }
 
 .alternate-section {
-  background: var(--soft-background);
+  background: var(--surface-alt);
 }
 
 .section-content {
   width: 100%;
 }
 
-.content-section h2 {
+.content-section h2,
+.subpage-section h1,
+.subpage-section h2,
+.page-heading {
   margin: 0 0 16px;
   padding-bottom: 8px;
-
+  color: var(--navy-dark);
   border-bottom: 2px solid var(--border);
-  color: var(--navy);
-  font-size: 26px;
   line-height: 1.25;
 }
 
+.content-section h2,
+.subpage-section h2 {
+  font-size: 26px;
+}
+
+.subpage-section h1,
+.page-heading {
+  font-size: 30px;
+}
+
+.section-introduction,
+.page-introduction {
+  max-width: 790px;
+  margin: 0 0 16px;
+  color: var(--muted-text);
+  font-size: 15.5px;
+  line-height: 1.6;
+}
 
 /* =========================================================
    About Me Section
@@ -260,7 +306,6 @@ ul {
 #about p:last-child {
   margin-bottom: 0;
 }
-
 
 /* =========================================================
    Research Interests Section
@@ -300,56 +345,6 @@ ul {
   font-size: 14px;
   line-height: 1.5;
 }
-
-
-/* =========================================================
-   Publications Styling
-   Reusable if needed on another page
-========================================================= */
-
-.publication {
-  margin-bottom: 20px;
-  padding-bottom: 17px;
-  border-bottom: 1px solid var(--border);
-}
-
-.publication:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-.publication h3 {
-  margin: 0 0 7px;
-  font-size: 18px;
-  line-height: 1.45;
-}
-
-.publication h3 a {
-  color: var(--blue);
-  text-decoration: none;
-}
-
-.publication h3 a:hover {
-  color: var(--blue-hover);
-  text-decoration: underline;
-}
-
-.publication-venue {
-  margin: 0 0 5px;
-  color: var(--text);
-  font-size: 15px;
-  font-style: italic;
-  line-height: 1.6;
-}
-
-.publication-authors {
-  margin: 0;
-  color: var(--text);
-  font-size: 15px;
-  line-height: 1.6;
-}
-
 
 /* =========================================================
    Experience Section
@@ -400,7 +395,6 @@ ul {
   line-height: 1.58;
 }
 
-
 /* =========================================================
    CV Section
 ========================================================= */
@@ -421,12 +415,10 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-
   padding: 10px 20px;
   background: var(--navy);
-  color: var(--white);
+  color: var(--on-navy);
   border-radius: 5px;
-
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
@@ -436,125 +428,38 @@ ul {
   background: var(--blue);
 }
 
-
 /* =========================================================
-   Back to Top and Footer
-========================================================= */
-
-.back-top-container {
-  display: flex;
-  justify-content: flex-end;
-  padding: 12px 38px 18px;
-}
-
-.back-to-top {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-
-  padding: 8px 14px;
-  background: var(--navy);
-  color: var(--white);
-  border-radius: 5px;
-
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.back-to-top:hover {
-  background: var(--blue);
-}
-
-footer {
-  padding: 16px 20px 23px;
-  text-align: center;
-  color: var(--muted-text);
-  border-top: 1px solid var(--border);
-  font-size: 14px;
-}
-
-footer p {
-  margin: 0;
-}
-
-
-/* =========================================================
-   Reusable Styles for project.html
-========================================================= */
-
-.project {
-  margin-bottom: 19px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border);
-}
-
-.project:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-.project h3 {
-  margin: 0 0 7px;
-  color: var(--navy-dark);
-  font-size: 19px;
-  line-height: 1.42;
-}
-
-.project p {
-  margin: 0;
-  color: var(--text);
-  font-size: 15.5px;
-  line-height: 1.62;
-}
-
-.project-status {
-  margin-bottom: 7px !important;
-  color: var(--blue) !important;
-  font-weight: 600;
-}
-
-
-/* =========================================================
-   Reusable Styles for education.html
+   Shared Subpage Layout: Education, Publications, Projects
 ========================================================= */
 
 .subpage-layout {
-  max-width: 1040px;
+  max-width: var(--content-width);
   margin: 0 auto;
-  padding: 32px 26px 42px;
+  padding: 28px 26px 42px;
 }
 
-.subpage-section {
-  margin-bottom: 26px;
-}
+/* =========================================================
+   Education Page
+========================================================= */
 
-.subpage-section h2 {
-  margin: 0 0 16px;
-  padding-bottom: 8px;
-
-  border-bottom: 2px solid var(--border);
-  color: var(--navy);
-  font-size: 26px;
-}
-
-.education-card,
-.skills-card,
-.coursework-card {
+.education-details {
   padding: 18px 20px;
-  background: var(--soft-background);
+  background: var(--card-background);
+  border: 1px solid var(--border);
   border-radius: 4px;
 }
 
-.education-card h3 {
+.education-details h3 {
   margin: 0 0 9px;
   color: var(--navy-dark);
   font-size: 20px;
+  line-height: 1.4;
 }
 
-.education-card p {
+.education-details p {
   margin: 5px 0;
+  font-size: 16px;
+  line-height: 1.55;
 }
 
 .coursework-grid,
@@ -567,7 +472,8 @@ footer p {
 .coursework-category,
 .skill-category {
   padding: 15px 17px;
-  background: var(--soft-background);
+  background: var(--card-background);
+  border: 1px solid var(--border);
   border-radius: 4px;
 }
 
@@ -598,15 +504,163 @@ footer p {
   line-height: 1.52;
 }
 
+/* =========================================================
+   Publications Page
+========================================================= */
+
+.publication {
+  margin-bottom: 20px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid var(--border);
+}
+
+.publication:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.publication h2,
+.publication h3 {
+  margin: 0 0 7px;
+  color: var(--navy-dark);
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.publication h2 a,
+.publication h3 a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.publication h2 a:hover,
+.publication h3 a:hover {
+  color: var(--blue-hover);
+  text-decoration: underline;
+}
+
+.publication-venue {
+  margin: 0 0 5px;
+  color: var(--text);
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.publication-authors {
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.paper-button {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid var(--blue);
+  border-radius: 4px;
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.paper-button:hover {
+  background: var(--blue);
+  color: var(--on-navy);
+}
+
+/* =========================================================
+   Projects Page
+========================================================= */
+
+.project {
+  margin-bottom: 19px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.project:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.project h3 {
+  margin: 0 0 7px;
+  color: var(--navy-dark);
+  font-size: 19px;
+  line-height: 1.42;
+}
+
+.project p {
+  margin: 0 0 6px;
+  color: var(--text);
+  font-size: 15.5px;
+  line-height: 1.62;
+}
+
+.project p:last-child {
+  margin-bottom: 0;
+}
+
+.project-status {
+  color: var(--blue) !important;
+  font-weight: 600;
+}
+
+/* =========================================================
+   Back to Top and Footer
+========================================================= */
+
+.back-top-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 38px 18px;
+}
+
+.subpage-layout .back-top-container {
+  padding: 18px 0 0;
+}
+
+.back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--navy);
+  color: var(--on-navy);
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.back-to-top:hover {
+  background: var(--blue);
+}
+
+footer {
+  padding: 16px 20px 23px;
+  text-align: center;
+  color: var(--muted-text);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+}
+
+footer p {
+  margin: 0;
+}
 
 /* =========================================================
    Tablet Responsive Design
 ========================================================= */
 
 @media (max-width: 1100px) {
-
   .top-nav {
-    gap: 23px;
+    gap: 22px;
   }
 
   .page-layout {
@@ -632,7 +686,8 @@ footer p {
     padding-top: 20px;
   }
 
-  .content-section {
+  .content-section,
+  .subpage-section {
     padding: 26px 25px;
   }
 
@@ -641,13 +696,11 @@ footer p {
   }
 }
 
-
 /* =========================================================
    Mobile Responsive Design
 ========================================================= */
 
 @media (max-width: 760px) {
-
   body {
     padding-top: 0;
   }
@@ -656,12 +709,18 @@ footer p {
     position: static;
     height: auto;
     flex-wrap: wrap;
-    gap: 10px 20px;
+    gap: 10px 18px;
     padding: 14px 12px;
   }
 
   .top-nav a {
     font-size: 14px;
+  }
+
+  .theme-toggle {
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
   }
 
   .page-layout {
@@ -689,15 +748,28 @@ footer p {
     padding-top: 0;
   }
 
-  .content-section {
+  .content-section,
+  .subpage-section {
     padding: 27px 20px;
     margin: 0;
     scroll-margin-top: 0;
   }
 
-  .content-section h2 {
+  .content-section h2,
+  .subpage-section h1,
+  .subpage-section h2,
+  .page-heading {
     margin-bottom: 15px;
+  }
+
+  .content-section h2,
+  .subpage-section h2 {
     font-size: 24px;
+  }
+
+  .subpage-section h1,
+  .page-heading {
+    font-size: 26px;
   }
 
   #about p {
@@ -730,23 +802,21 @@ footer p {
   }
 
   .subpage-layout {
-    padding: 28px 20px 38px;
+    padding: 0 0 22px;
   }
 
-  .subpage-section {
-    margin-bottom: 23px;
+  .subpage-layout .back-top-container {
+    padding-top: 18px;
   }
 }
-
 
 /* =========================================================
    Small Mobile Screens
 ========================================================= */
 
 @media (max-width: 480px) {
-
   .top-nav {
-    gap: 8px 15px;
+    gap: 8px 14px;
     padding: 12px 9px;
   }
 
@@ -772,12 +842,19 @@ footer p {
     margin-top: 16px;
   }
 
-  .content-section {
+  .content-section,
+  .subpage-section {
     padding: 25px 16px;
   }
 
-  .content-section h2 {
+  .content-section h2,
+  .subpage-section h2 {
     font-size: 22px;
+  }
+
+  .subpage-section h1,
+  .page-heading {
+    font-size: 24px;
   }
 
   .research-item,
