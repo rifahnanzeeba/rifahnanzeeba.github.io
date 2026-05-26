@@ -41,7 +41,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: var(--text);
   background: var(--white);
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 a {
@@ -54,6 +54,10 @@ p {
 
 strong {
   color: var(--navy-dark);
+}
+
+ul {
+  padding-left: 22px;
 }
 
 
@@ -72,9 +76,9 @@ strong {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 42px;
+  gap: 38px;
 
-  padding: 0 26px;
+  padding: 0 24px;
   background: var(--navy);
   box-shadow: 0 2px 9px rgba(17, 24, 39, 0.15);
 }
@@ -87,7 +91,8 @@ strong {
   letter-spacing: 0.01em;
 }
 
-.top-nav a:hover {
+.top-nav a:hover,
+.top-nav a.active {
   color: var(--blue-light);
 }
 
@@ -103,7 +108,8 @@ strong {
 
   display: grid;
   grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
-  column-gap: 70px;
+  column-gap: 62px;
+  align-items: start;
 }
 
 
@@ -113,17 +119,17 @@ strong {
 
 .profile-sidebar {
   position: sticky;
-  top: calc(var(--nav-height) + 52px);
+  top: calc(var(--nav-height) + 32px);
   align-self: start;
   text-align: center;
-  padding-top: 58px;
+  padding-top: 42px;
 }
 
 .profile-photo {
   display: block;
   width: 205px;
   height: 255px;
-  margin: 0 auto 22px;
+  margin: 0 auto 16px;
 
   object-fit: cover;
   object-position: center;
@@ -132,32 +138,32 @@ strong {
 }
 
 .profile-sidebar h1 {
-  margin: 0 0 12px;
+  margin: 0 0 9px;
   color: var(--navy-dark);
-  font-size: 28px;
+  font-size: 27px;
   font-weight: 700;
   line-height: 1.3;
 }
 
 .profile-title {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   color: var(--text);
   font-size: 15px;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 .profile-institution {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   color: var(--muted-text);
   font-size: 14px;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 .profile-status {
   margin: 0;
   color: var(--muted-text);
   font-size: 14px;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 
@@ -170,7 +176,7 @@ strong {
   align-items: center;
   justify-content: center;
   gap: 23px;
-  margin-top: 27px;
+  margin-top: 20px;
 }
 
 .social-icons a {
@@ -185,7 +191,7 @@ strong {
 }
 
 .profile-contact {
-  margin-top: 22px;
+  margin-top: 16px;
   font-size: 14px;
 }
 
@@ -207,16 +213,15 @@ strong {
 
 .main-content {
   min-width: 0;
+  padding-top: 28px;
 }
 
 .content-section {
   width: 100%;
-  min-height: calc(100vh - var(--nav-height));
-  padding: 68px 54px;
-  display: flex;
-  align-items: center;
+  padding: 34px 42px;
+  margin-bottom: 14px;
 
-  scroll-margin-top: var(--nav-height);
+  scroll-margin-top: calc(var(--nav-height) + 8px);
   border-bottom: 1px solid var(--border);
   background: var(--white);
 }
@@ -230,12 +235,12 @@ strong {
 }
 
 .content-section h2 {
-  margin: 0 0 30px;
-  padding-bottom: 12px;
+  margin: 0 0 18px;
+  padding-bottom: 9px;
 
   border-bottom: 2px solid var(--border);
   color: var(--navy);
-  font-size: 29px;
+  font-size: 27px;
   line-height: 1.25;
 }
 
@@ -246,10 +251,10 @@ strong {
 
 #about p {
   max-width: 780px;
-  margin-bottom: 22px;
+  margin-bottom: 13px;
   color: var(--text);
-  font-size: 17px;
-  line-height: 1.9;
+  font-size: 16.5px;
+  line-height: 1.72;
 }
 
 #about p:last-child {
@@ -264,40 +269,38 @@ strong {
 .research-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  gap: 14px;
 }
 
 .research-item {
-  min-height: 142px;
-  padding: 20px 20px 18px;
-
+  padding: 16px 18px;
   background: var(--card-background);
-  border-left: 4px solid var(--navy);
   border-radius: 4px;
 }
 
 .research-item h3 {
-  margin: 0 0 10px;
+  margin: 0 0 7px;
   color: var(--navy-dark);
-  font-size: 18px;
-  line-height: 1.42;
+  font-size: 17px;
+  line-height: 1.4;
 }
 
 .research-item p {
   margin: 0;
   color: var(--muted-text);
-  font-size: 15px;
-  line-height: 1.62;
+  font-size: 14.5px;
+  line-height: 1.55;
 }
 
 
 /* =========================================================
-   Publications Section
+   Publications Styling
+   Reusable if publications are shown on a page using this CSS
 ========================================================= */
 
 .publication {
-  margin-bottom: 27px;
-  padding-bottom: 23px;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -308,9 +311,9 @@ strong {
 }
 
 .publication h3 {
-  margin: 0 0 9px;
-  font-size: 19px;
-  line-height: 1.48;
+  margin: 0 0 7px;
+  font-size: 18px;
+  line-height: 1.45;
 }
 
 .publication h3 a {
@@ -324,16 +327,18 @@ strong {
 }
 
 .publication-venue {
-  margin: 0 0 7px;
+  margin: 0 0 5px;
   color: var(--text);
-  font-size: 15.5px;
+  font-size: 15px;
   font-style: italic;
+  line-height: 1.6;
 }
 
 .publication-authors {
   margin: 0;
   color: var(--text);
-  font-size: 15.5px;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 
@@ -349,14 +354,15 @@ strong {
   display: flex;
   justify-content: space-between;
   align-items: start;
-  gap: 30px;
-  margin-bottom: 18px;
+  gap: 24px;
+  margin-bottom: 12px;
 }
 
 .experience-heading h3 {
-  margin: 0 0 5px;
+  margin: 0 0 4px;
   color: var(--navy-dark);
-  font-size: 21px;
+  font-size: 20px;
+  line-height: 1.4;
 }
 
 .organization {
@@ -375,14 +381,14 @@ strong {
 
 .experience-list {
   margin: 0;
-  padding-left: 22px;
+  padding-left: 21px;
 }
 
 .experience-list li {
-  margin-bottom: 10px;
-  padding-left: 4px;
-  font-size: 16px;
-  line-height: 1.72;
+  margin-bottom: 6px;
+  padding-left: 3px;
+  font-size: 15.5px;
+  line-height: 1.6;
 }
 
 
@@ -396,24 +402,24 @@ strong {
 
 #cv p {
   max-width: 620px;
-  margin: 0 auto 26px;
+  margin: 0 auto 18px;
   color: var(--muted-text);
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: 16px;
+  line-height: 1.65;
 }
 
 .cv-button {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 8px;
 
-  padding: 11px 23px;
+  padding: 10px 20px;
   background: var(--navy);
   color: var(--white);
   border-radius: 5px;
 
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
 }
 
@@ -429,7 +435,7 @@ strong {
 .back-top-container {
   display: flex;
   justify-content: flex-end;
-  padding: 30px 54px 22px;
+  padding: 10px 42px 18px;
 }
 
 .back-to-top {
@@ -437,7 +443,7 @@ strong {
   align-items: center;
   gap: 8px;
 
-  padding: 9px 15px;
+  padding: 8px 14px;
   background: var(--navy);
   color: var(--white);
   border-radius: 5px;
@@ -452,7 +458,7 @@ strong {
 }
 
 footer {
-  padding: 22px 20px 32px;
+  padding: 18px 20px 25px;
   text-align: center;
   color: var(--muted-text);
   border-top: 1px solid var(--border);
@@ -469,8 +475,8 @@ footer p {
 ========================================================= */
 
 .project {
-  margin-bottom: 26px;
-  padding-bottom: 22px;
+  margin-bottom: 20px;
+  padding-bottom: 17px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -481,21 +487,21 @@ footer p {
 }
 
 .project h3 {
-  margin: 0 0 9px;
+  margin: 0 0 7px;
   color: var(--navy-dark);
-  font-size: 20px;
-  line-height: 1.45;
+  font-size: 19px;
+  line-height: 1.42;
 }
 
 .project p {
   margin: 0;
   color: var(--text);
-  font-size: 16px;
-  line-height: 1.72;
+  font-size: 15.5px;
+  line-height: 1.62;
 }
 
 .project-status {
-  margin-bottom: 8px !important;
+  margin-bottom: 7px !important;
   color: var(--blue) !important;
   font-weight: 600;
 }
@@ -506,78 +512,81 @@ footer p {
 ========================================================= */
 
 .subpage-layout {
-  max-width: 960px;
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 56px 26px 70px;
+  padding: 35px 26px 45px;
 }
 
 .subpage-section {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .subpage-section h2 {
-  margin: 0 0 25px;
-  padding-bottom: 11px;
+  margin: 0 0 18px;
+  padding-bottom: 9px;
 
   border-bottom: 2px solid var(--border);
   color: var(--navy);
-  font-size: 28px;
+  font-size: 27px;
 }
 
 .education-card,
 .skills-card,
-.honors-card,
 .coursework-card {
-  padding: 23px 24px;
+  padding: 20px 22px;
   background: var(--soft-background);
-  border-left: 4px solid var(--navy);
   border-radius: 4px;
 }
 
 .education-card h3 {
-  margin: 0 0 14px;
+  margin: 0 0 10px;
   color: var(--navy-dark);
-  font-size: 21px;
+  font-size: 20px;
 }
 
 .education-card p {
-  margin: 7px 0;
+  margin: 6px 0;
 }
 
+.coursework-grid,
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  gap: 14px;
 }
 
+.coursework-category,
 .skill-category {
-  padding: 19px 20px;
+  padding: 16px 18px;
   background: var(--soft-background);
-  border-left: 4px solid var(--navy);
   border-radius: 4px;
 }
 
+.coursework-category h3,
 .skill-category h3 {
-  margin: 0 0 9px;
+  margin: 0 0 7px;
   color: var(--navy-dark);
-  font-size: 18px;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.coursework-category ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.coursework-category li {
+  margin-bottom: 5px;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .skill-category p {
   margin: 0;
   color: var(--text);
   font-size: 15px;
-}
-
-.honors-card ul,
-.coursework-card ul {
-  margin: 0;
-  padding-left: 22px;
-}
-
-.honors-card li,
-.coursework-card li {
-  margin-bottom: 8px;
+  line-height: 1.55;
 }
 
 
@@ -588,13 +597,17 @@ footer p {
 @media (max-width: 1000px) {
 
   .top-nav {
-    gap: 24px;
+    gap: 23px;
   }
 
   .page-layout {
     grid-template-columns: 235px minmax(0, 1fr);
-    column-gap: 35px;
+    column-gap: 32px;
     padding: 0 20px;
+  }
+
+  .profile-sidebar {
+    padding-top: 34px;
   }
 
   .profile-photo {
@@ -606,8 +619,12 @@ footer p {
     font-size: 25px;
   }
 
+  .main-content {
+    padding-top: 20px;
+  }
+
   .content-section {
-    padding: 54px 32px;
+    padding: 30px 28px;
   }
 
   .research-grid {
@@ -622,10 +639,6 @@ footer p {
 
 @media (max-width: 760px) {
 
-  :root {
-    --nav-height: auto;
-  }
-
   body {
     padding-top: 0;
   }
@@ -634,8 +647,8 @@ footer p {
     position: static;
     height: auto;
     flex-wrap: wrap;
-    gap: 10px 21px;
-    padding: 15px 14px;
+    gap: 10px 20px;
+    padding: 14px 12px;
   }
 
   .top-nav a {
@@ -649,7 +662,7 @@ footer p {
 
   .profile-sidebar {
     position: static;
-    padding: 42px 20px 48px;
+    padding: 32px 20px 34px;
     border-bottom: 1px solid var(--border);
   }
 
@@ -659,41 +672,34 @@ footer p {
   }
 
   .profile-sidebar h1 {
-    font-size: 25px;
+    font-size: 24px;
   }
 
   .main-content {
     width: 100%;
+    padding-top: 0;
   }
 
   .content-section {
-    min-height: auto;
-    padding: 48px 21px;
+    padding: 30px 20px;
+    margin-bottom: 0;
     scroll-margin-top: 0;
   }
 
   .content-section h2 {
-    margin-bottom: 23px;
-    font-size: 25px;
+    margin-bottom: 17px;
+    font-size: 24px;
   }
 
   #about p {
     font-size: 16px;
-    line-height: 1.78;
+    line-height: 1.68;
   }
 
   .research-grid,
+  .coursework-grid,
   .skills-grid {
     grid-template-columns: 1fr;
-  }
-
-  .publication h3 {
-    font-size: 17px;
-  }
-
-  .publication-venue,
-  .publication-authors {
-    font-size: 15px;
   }
 
   .experience-heading {
@@ -701,20 +707,20 @@ footer p {
   }
 
   .duration {
-    margin-top: 8px;
-  }
-
-  .experience-list li {
-    font-size: 15.5px;
+    margin-top: 7px;
   }
 
   .back-top-container {
-    padding: 22px 21px 34px;
+    padding: 10px 20px 24px;
     justify-content: center;
   }
 
   .subpage-layout {
-    padding: 42px 20px 55px;
+    padding: 30px 20px 40px;
+  }
+
+  .subpage-section {
+    margin-bottom: 25px;
   }
 }
 
@@ -726,8 +732,8 @@ footer p {
 @media (max-width: 480px) {
 
   .top-nav {
-    gap: 8px 16px;
-    padding: 13px 10px;
+    gap: 8px 15px;
+    padding: 12px 9px;
   }
 
   .top-nav a {
@@ -735,7 +741,7 @@ footer p {
   }
 
   .profile-sidebar {
-    padding: 35px 16px 40px;
+    padding: 28px 16px 30px;
   }
 
   .profile-photo {
@@ -744,31 +750,38 @@ footer p {
   }
 
   .profile-sidebar h1 {
-    font-size: 23px;
+    font-size: 22px;
   }
 
   .social-icons {
     gap: 20px;
+    margin-top: 17px;
   }
 
   .content-section {
-    padding: 39px 16px;
+    padding: 26px 16px;
   }
 
   .content-section h2 {
-    font-size: 23px;
+    font-size: 22px;
   }
 
-  .research-item {
-    padding: 17px;
+  .research-item,
+  .coursework-category,
+  .skill-category {
+    padding: 15px;
   }
 
   #cv p {
-    font-size: 15.5px;
+    font-size: 15px;
   }
 
   .cv-button {
-    font-size: 15px;
-    padding: 10px 19px;
+    font-size: 14px;
+    padding: 9px 17px;
+  }
+
+  footer {
+    padding: 16px 15px 22px;
   }
 }
