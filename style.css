@@ -26,6 +26,26 @@
   --sidebar-width: 285px;
 }
 
+/* =========================================================
+   Dark Mode Theme
+========================================================= */
+
+[data-theme="dark"] {
+  --navy: #0f172a;
+  --navy-dark: #f1f5f9;
+  --blue: #7db9e3;
+  --blue-hover: #acd6f3;
+  --blue-light: #bfdbfe;
+
+  --text: #e5e7eb;
+  --muted-text: #b6c1ce;
+  --border: #334155;
+
+  --white: #111827;
+  --soft-background: #172131;
+  --card-background: #172131;
+}
+
 html[data-theme="dark"] {
   --navy: #101827;
   --navy-dark: #f4f7fb;
@@ -115,6 +135,42 @@ ul {
 .top-nav a:hover,
 .top-nav a.active {
   color: var(--blue-light);
+}
+
+/* =========================================================
+   Theme Toggle Button
+========================================================= */
+
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+  margin-left: 4px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+}
+
+[data-theme="dark"] .profile-photo {
+  border-color: #475569;
+}
+
+[data-theme="dark"] footer {
+  background: var(--white);
 }
 
 .theme-toggle {
