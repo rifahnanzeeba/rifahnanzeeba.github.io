@@ -3,127 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rifah Nanzeeba | Electrical &amp; Electronic Engineering</title>
 
-  <title>Rifah Nanzeeba | Electrical & Electronic Engineering</title>
-
-  <!-- Font Awesome Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  >
-
-  <!-- External CSS File -->
+  <script>
+    document.documentElement.setAttribute(
+      "data-theme",
+      localStorage.getItem("theme") || "light"
+    );
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body id="top">
 
-  <!-- =========================
-       Navigation Bar
-  ========================== -->
   <nav class="top-nav">
-    <a href="#about">Home</a>
+    <a href="#about" class="active">Home</a>
     <a href="education.html">Education</a>
     <a href="publications.html">Publications</a>
     <a href="project.html">Projects</a>
     <a href="#experience">Experience</a>
     <a href="#research-interests">Research</a>
     <a href="#cv">CV</a>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">
+      <i class="fa-solid fa-moon"></i>
+    </button>
   </nav>
 
-  <!-- =========================
-       Main Page Layout
-  ========================== -->
   <div class="page-layout">
 
-    <!-- =========================
-         Left Profile Sidebar
-    ========================== -->
     <aside class="profile-sidebar" id="contact">
-
-      <img
-        src="WM.jpeg"
-        alt="Rifah Nanzeeba"
-        class="profile-photo"
-      >
+      <img src="WM.jpeg" alt="Rifah Nanzeeba" class="profile-photo">
 
       <h1>Rifah Nanzeeba</h1>
 
-      <p class="profile-title">
-        Electrical &amp; Electronic Engineering Graduate
-      </p>
-
-      <p class="profile-institution">
-        Bangladesh University of Engineering and Technology
-      </p>
-
-      <p class="profile-status">
-        Prospective Graduate Student | Spring 2027
-      </p>
+      <p class="profile-title">Electrical &amp; Electronic Engineering Graduate</p>
+      <p class="profile-institution">Bangladesh University of Engineering and Technology</p>
+      <p class="profile-status">Prospective Graduate Student | Spring 2027</p>
 
       <div class="social-icons">
-
-        <a
-          href="mailto:nanzeeba5041277@gmail.com"
-          title="Email"
-          aria-label="Email"
-        >
+        <a href="mailto:nanzeeba5041277@gmail.com" title="Email" aria-label="Email">
           <i class="fa-solid fa-envelope"></i>
         </a>
-
-        <a
-          href="https://scholar.google.com/citations?user=uKx2YNoAAAAJ&hl=en&oi=ao"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Google Scholar"
-          aria-label="Google Scholar"
-        >
+        <a href="https://scholar.google.com/citations?user=uKx2YNoAAAAJ&amp;hl=en&amp;oi=ao"
+           target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar">
           <i class="fa-brands fa-google-scholar"></i>
         </a>
-
-        <a
-          href="https://github.com/rifahnanzeeba"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="GitHub"
-          aria-label="GitHub"
-        >
+        <a href="https://github.com/rifahnanzeeba"
+           target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
           <i class="fa-brands fa-github"></i>
         </a>
-
-        <a
-          href="https://www.linkedin.com/in/rifah-nanzeeba-9958081a5/"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="LinkedIn"
-          aria-label="LinkedIn"
-        >
+        <a href="https://www.linkedin.com/in/rifah-nanzeeba-9958081a5/"
+           target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
           <i class="fa-brands fa-linkedin"></i>
         </a>
-
       </div>
 
       <div class="profile-contact">
-        <a href="mailto:nanzeeba5041277@gmail.com">
-          nanzeeba5041277@gmail.com
-        </a>
+        <a href="mailto:nanzeeba5041277@gmail.com">nanzeeba5041277@gmail.com</a>
       </div>
-
     </aside>
 
-    <!-- =========================
-         Right Scrollable Content
-    ========================== -->
     <main class="main-content">
 
-      <!-- =========================
-           About Me Section
-      ========================== -->
       <section id="about" class="content-section">
         <div class="section-content">
-
           <h2>About Me</h2>
-
           <p>
             I am an Electrical and Electronic Engineering graduate from
             Bangladesh University of Engineering and Technology (BUET), with
@@ -131,7 +76,6 @@
             embedded systems, computer vision, signal processing, renewable
             energy, and power systems.
           </p>
-
           <p>
             My academic and project experience includes IoT-based monitoring
             systems, autonomous medicine dispensing robotics, intelligent
@@ -139,177 +83,101 @@
             learning, and hardware-assisted malware detection using machine
             learning.
           </p>
-
           <p>
             I aim to pursue graduate research that applies intelligent sensing,
             embedded systems, and data-driven methods to real-world engineering
             challenges in automation, smart energy, healthcare technology,
             agriculture, and robotics.
           </p>
-
         </div>
       </section>
 
-      
-    
-
-      <!-- =========================
-           Research Interests Section
-      ========================== -->
       <section id="research-interests" class="content-section">
         <div class="section-content">
-
           <h2>Research Interests</h2>
 
+          <p class="research-summary">
+            My research interests focus on developing intelligent, sensor-driven
+            engineering systems for real-world applications in automation,
+            energy, healthcare, and agriculture.
+          </p>
+
           <div class="research-grid">
-
             <div class="research-item">
-              <h3>Machine Learning and Data Analytics</h3>
+              <h3>Intelligent Sensing &amp; Applied Machine Learning</h3>
               <p>
-                Data-driven classification, prediction, and intelligent
-                decision-making systems for engineering applications.
+                Machine learning, computer vision, and signal processing for
+                classification, monitoring, and decision-making systems.
               </p>
             </div>
 
             <div class="research-item">
-              <h3>Internet of Things and Embedded Systems</h3>
+              <h3>Embedded, IoT &amp; Autonomous Systems</h3>
               <p>
-                Sensor-based monitoring, automation, microcontroller systems,
-                and real-time data acquisition.
+                Embedded sensing, IoT-based monitoring, automation, and
+                robotics-oriented intelligent system development.
               </p>
             </div>
 
             <div class="research-item">
-              <h3>Computer Vision and Intelligent Systems</h3>
+              <h3>Smart Energy &amp; Sustainable Systems</h3>
               <p>
-                Image-based detection, real-time monitoring, and AI-assisted
-                engineering solutions.
+                Renewable energy, smart energy monitoring, power-aware systems,
+                and technology-assisted sustainable agriculture.
               </p>
             </div>
-
-            <div class="research-item">
-              <h3>Signal Processing and Communication Systems</h3>
-              <p>
-                Signal analysis, feature extraction, wireless communication,
-                and energy-efficient network design.
-              </p>
-            </div>
-
-            <div class="research-item">
-              <h3>Renewable Energy and Power Systems</h3>
-              <p>
-                Solar PV systems, smart energy monitoring, sustainable power
-                applications, and agrovoltaics.
-              </p>
-            </div>
-
-            <div class="research-item">
-              <h3>Robotics and Autonomous Systems</h3>
-              <p>
-                ROS 2-based robotics learning, simulation, sensing, and
-                intelligent autonomous systems.
-              </p>
-            </div>
-
           </div>
         </div>
       </section>
 
-       <!-- =========================
-           CV Section
-      ========================== -->
       <section id="cv" class="content-section">
         <div class="section-content cv-section-content">
-
           <h2>Curriculum Vitae</h2>
-
           <p>
             A detailed summary of my academic background, publications,
             technical experience, and projects is available in my CV.
           </p>
-
-          <a
-            href="Rifah_Nanzeeba_CV__Copy__for_github.pdf"
-            download
-            class="cv-button"
-          >
-            <i class="fa-solid fa-download"></i>
-            Download CV
+          <a href="Rifah_Nanzeeba_CV__Copy__for_github.pdf" download class="cv-button">
+            <i class="fa-solid fa-download"></i> Download CV
           </a>
-
         </div>
       </section>
 
-      <!-- =========================
-           Experience Section
-      ========================== -->
       <section id="experience" class="content-section">
         <div class="section-content">
-
           <h2>Experience</h2>
 
           <article class="experience-item">
-
             <div class="experience-heading">
               <div>
                 <h3>Trainee Engineer</h3>
-                <p class="organization">
-                  Decor Energy Solutions &amp; Development Ltd.
-                </p>
+                <p class="organization">Decor Energy Solutions &amp; Development Ltd.</p>
               </div>
-
-              <p class="duration">
-                September 2025 – January 2026
-              </p>
+              <p class="duration">September 2025 – January 2026</p>
             </div>
 
             <ul class="experience-list">
-              <li>
-                Prepared rooftop solar PV layouts and single-line diagrams
-                using AutoCAD for government and commercial projects.
-              </li>
-
-              <li>
-                Assisted with industrial site visits, client requirement
-                assessment, BOQ preparation, commercial offers, and tender
-                documentation.
-              </li>
-
-              <li>
-                Supported vendor coordination and technical documentation for
-                rooftop solar projects.
-              </li>
-
-              <li>
-                Assisted with remote monitoring and troubleshooting of energy
-                meters through a server-based platform.
-              </li>
+              <li>Prepared rooftop solar PV layouts and single-line diagrams using AutoCAD for government and commercial projects.</li>
+              <li>Assisted with industrial site visits, client requirement assessment, BOQ preparation, commercial offers, and tender documentation.</li>
+              <li>Supported vendor coordination and technical documentation for rooftop solar projects.</li>
+              <li>Assisted with remote monitoring and troubleshooting of energy meters through a server-based platform.</li>
             </ul>
-
           </article>
-
         </div>
       </section>
 
-
-      <!-- =========================
-           Back to Top Button
-      ========================== -->
       <div class="back-top-container">
         <a href="#top" class="back-to-top">
           Back to Top <i class="fa-solid fa-arrow-up"></i>
         </a>
       </div>
-
     </main>
   </div>
 
-  <!-- =========================
-       Footer
-  ========================== -->
   <footer>
     <p>© 2026 Rifah Nanzeeba</p>
   </footer>
 
+  <script src="theme.js"></script>
 </body>
 </html>
